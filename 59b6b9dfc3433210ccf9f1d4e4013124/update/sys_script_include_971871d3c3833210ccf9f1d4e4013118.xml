@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_984628_deploye_0.ScriptEvaluator</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ScriptEvaluator</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * @class ScriptEvaluator
+ * @description 
+ * @since 19/02/2026
+ * @date  19/02/2026
+ * @version 1.0.0
+ * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
+ *
+ */
+class ScriptEvaluator {
+
+
+    // WARNING: Using this function might be considered as a violation of security policies.
+    // Please make sure any use is based on conscious choice and careful assessment.
+    /**
+     * @param {String} sourceScript
+     * @param {Object} params
+     */
+    executScript(scope, sourceScript, params) {
+        const LIMIT = 1;
+        let evaluatedValue = null;
+        const evaluator = new GlideScopedEvaluator();
+
+        const gr = new GlideRecord('sys_script_include');
+        gr.addQuery('sys_scope', scope);
+        // // additional protection against accidental update
+        gr.addQuery('sys_policy', 'read');
+        gr.setLimit(LIMIT);
+        gr.query();
+
+        if (gr.next()) {
+
+            gr.setValue('script', sourceScript);
+
+			gr.update();
+
+            try {
+                evaluatedValue = evaluator.evaluateScript(gr, 'script', params);
+                evaluatedValue = evaluator.getVariable('result');
+            } catch (e) {
+                throw new Error(e);
+            }
+        }
+
+        return evaluatedValue;
+    }
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-19 07:20:22</sys_created_on>
+        <sys_id>971871d3c3833210ccf9f1d4e4013118</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>ScriptEvaluator</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_include_971871d3c3833210ccf9f1d4e4013118</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-19 17:11:04</sys_updated_on>
+    </sys_script_include>
+</record_update>

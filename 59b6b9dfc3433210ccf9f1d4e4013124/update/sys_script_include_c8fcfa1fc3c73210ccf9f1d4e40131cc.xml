@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_984628_deploye_0.GlideRecordUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GlideRecordUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * @class GlideRecordUtils
+ * @description The utils script contains functions of general regarding GlideRecord.
+ * @since 19/02/2026
+ * @date  19/02/2026
+ * @version 1.0.0
+ * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
+ *
+ */
+class GlideRecordUtils {
+
+	static isDerivedFromTable() {
+		
+	}
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-19 12:16:56</sys_created_on>
+        <sys_id>c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GlideRecordUtils</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-19 13:05:18</sys_updated_on>
+    </sys_script_include>
+</record_update>

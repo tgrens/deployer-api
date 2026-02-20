@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_984628_deploye_0.StringBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>The StringBuilder provides methods to append, replace, delete and insert from charsequence.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>StringBuilder</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * @class StringBuilder
+ * @description The StringBuilder provides methods to append, replace, delete and insert from charsequence.
+ * @since 09/06/2023
+ * @date  09/06/2023
+ * @version 1.0.0
+ * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
+ *
+ */
+class StringBuilder {
+
+    /**
+     * @description constructor
+     *
+     * @param {String} _string
+     */
+    constructor(_string) {
+        this.resultString = [];
+        this.string = _string;
+    }
+
+    /**
+     * @description Appends the string to the sequence
+     *
+     * @param {String} string char sequence
+     */
+    append(string) {
+        this.resultString.push(string);
+        return this;
+    }
+
+    /**
+     * @description Replaces the char at the specified position in this sequence.
+     *
+     * @param {number} index Index of char
+     * @param {character} character char sequence
+     */
+    replaceAt(index, character) {
+        const FROM = 0;
+
+        this.resultString.push(this.string.substr(FROM, index) +
+            character + this.string.substr(index + character.length));
+
+        return this;
+    }
+
+    /**
+     * @description Removes the char at the specified position in this sequence.
+     *
+     * @param {number} index  Index of char to remove
+     * @returns {object} current object this
+     */
+    deleteCharAt(index) {
+		const COUNT = 1;
+
+        // eslint-disable-next-line 
+        index = index - 1;
+        // eslint-disable-next-line 
+        if (index >= 0) {
+            var array = this.string.split('');
+
+            array.splice(index, COUNT);
+            array = array.join('');
+
+            this.resultString.push(array);
+        } else {
+            this.resultString.push(this.string);
+        }
+
+        return this;
+    }
+
+    /**
+     * @description Inserts the string representation of the char argument into this sequence.
+     *
+     * @param {number}  index  Index of char
+     * @param {character} character char sequence
+     *
+     * @returns {object} current object this
+     */
+    insert(offset, insert) {
+        const FROM = 0;
+
+// eslint-disable-next-line 
+        if (offset > 0) {
+            this.resultString.push(this.string.substring(FROM, offset) +
+                insert + this.string.substring(offset, this.length));
+        } else {
+            this.resultString.push(insert + this.string);
+        }
+        return this;
+    }
+
+    /**
+     * @description Returns a string representing the data in this sequence.
+     */
+    toString() {
+        var result = this.resultString.join('');
+
+		// eslint-disable-next-line 
+        return new String(result);
+    }
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-19 07:28:14</sys_created_on>
+        <sys_id>e60b355bc3833210ccf9f1d4e40131f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>StringBuilder</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_include_e60b355bc3833210ccf9f1d4e40131f1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-19 07:28:14</sys_updated_on>
+    </sys_script_include>
+</record_update>
