@@ -27,10 +27,10 @@ class Installer {
     recordInsert(reason, table, properties, workflow) {
         workflow = workflow || false;
 
-        var params = {
+        const params = {
             'table': table,
             'properties': JSON.stringify(properties),
-            'workflow': false,
+            'workflow': UtilityFunctions.getBooleanValue(workflow),
             'result': ''
         };
 
@@ -47,12 +47,17 @@ class Installer {
     recordUpdate(reason, table, sysId, field, value, workflow) {
         workflow = workflow || false;
 
-        var params = {
+        const properties = {
+            'field': field,
+            'value': value
+        };
+
+        const params = {
             'reason': reason,
             'table': table,
-            'sysId': sysId,
-            'field': field,
-            'value': value,
+            'column': 'sys_id',
+			'identifier': sysId,
+            'properties': JSON.stringify(properties),
             'workflow': UtilityFunctions.getBooleanValue(workflow),
             'result': ''
         };
@@ -63,15 +68,45 @@ class Installer {
     }
 
     /**
+     * @description Updates records from mention table based on mention query.
+     *
+     * @param {String} reason
+     * @param {String} table The table to be used.
+     * @param {String} query Encoded query
+     * @param {Object} properties property object
+     * @param {Boolean} workFlow Enables or disables the running of business rules
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
+     */
+    // eslint-disable-next-line
+    recordUpdateByQuery(reason, table, query, properties, workflow) {
+        workflow = workflow || false;
+
+        const params = {
+            'reason': reason,
+            'table': table,
+            'query': query,
+            'properties': properties,
+            'workflow': UtilityFunctions.getBooleanValue(workflow),
+            'result': ''
+        };
+
+        const script = ScriptBuider.getScriptRecordUpdateByQuery();
+
+        return new ScriptEvaluator().executScript('global', script, params);
+    }
+
+    /**
      * 
      */
     recordDelete(reason, table, sysId, workflow) {
         workflow = workflow || false;
 
-        var params = {
+        const params = {
             'table': table,
             'sysId': sysId,
-            'workflow': UtilityFunctions.getBooleanValue(workflow)
+            'workflow': UtilityFunctions.getBooleanValue(workflow),
+			'result': ''
 
         };
 
@@ -87,17 +122,21 @@ class Installer {
     dictionaryRecordInsert(reason, table, element, field, value, workflow) {
         workflow = workflow || false;
 
-        var params = {
-            'reason': reason,
-            'table': table,
+        const properties = {
             'element': element,
             'field': field,
-            'value': value,
+            'value': value
+        };
+
+        const params = {
+            'reason': reason,
+            'table': table,
+            'properties': properties,
             'workflow': UtilityFunctions.getBooleanValue(workflow),
             'result': ''
         };
 
-        const script = ScriptBuider.getScriptDictionaryRecordInsert();
+        const script = ScriptBuider.getScriptRecordInsert();
 
         return new ScriptEvaluator().executScript('global', script, params);
     }
@@ -109,18 +148,22 @@ class Installer {
     dictionaryOverrideRecordInsert(reason, table, element, override, field, value, workflow) {
         workflow = workflow || false;
 
+        const properties = {
+            'element': element,
+            'field': field,
+            'override': override,
+            'value': value
+        };
+
         var params = {
             'reason': reason,
             'table': table,
-            'element': element,
-            'field': field,
-			'override':override,
-            'value': value,
+            'properties': properties,
             'workflow': UtilityFunctions.getBooleanValue(workflow),
             'result': ''
         };
 
-        const script = ScriptBuider.getScriptDictionaryOverrideRecordInsert();
+        const script = ScriptBuider.getScriptRecordInsert();
 
         return new ScriptEvaluator().executScript('global', script, params);
     }
@@ -132,6 +175,12 @@ class Installer {
     dictionaryRecordUpdate(reason, table, element, field, value, workflow) {
         workflow = workflow || false;
 
+        const properties = {
+            'element': element,
+            'field': field,
+            'value': value
+        };
+
         var params = {
             'reason': reason,
             'table': table,
@@ -142,7 +191,7 @@ class Installer {
             'result': ''
         };
 
-        const script = ScriptBuider.getScriptDictionaryRecordUpdate();
+        const script = ScriptBuider.getScriptRecordUpdate();
 
         return new ScriptEvaluator().executScript('global', script, params);
     }
@@ -158,14 +207,14 @@ class Installer {
             'reason': reason,
             'table': table,
             'element': element,
-			'override': override,
+            'override': override,
             'field': field,
             'value': value,
             'workflow': UtilityFunctions.getBooleanValue(workflow),
             'result': ''
         };
 
-        const script = ScriptBuider.getScriptDictionaryOverrideRecordUpdate();
+        const script = ScriptBuider.getScriptRecordUpdate();
 
         return new ScriptEvaluator().executScript('global', script, params);
     }
@@ -175,13 +224,13 @@ class Installer {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 07:14:27</sys_created_on>
         <sys_id>61d6fddfc3433210ccf9f1d4e40131d5</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>Installer</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_61d6fddfc3433210ccf9f1d4e40131d5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-19 17:10:26</sys_updated_on>
+        <sys_updated_on>2026-02-20 10:04:28</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -43,8 +43,6 @@ class ScriptEvaluator {
 
             gr.setValue('script', sourceScript);
 
-			gr.update();
-
             try {
                 evaluatedValue = evaluator.evaluateScript(gr, 'script', params);
                 evaluatedValue = evaluator.getVariable('result');
@@ -60,13 +58,13 @@ class ScriptEvaluator {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 07:20:22</sys_created_on>
         <sys_id>971871d3c3833210ccf9f1d4e4013118</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>ScriptEvaluator</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_971871d3c3833210ccf9f1d4e4013118</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-19 17:11:04</sys_updated_on>
+        <sys_updated_on>2026-02-20 06:28:47</sys_updated_on>
     </sys_script_include>
 </record_update>

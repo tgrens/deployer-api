@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite_test">
+    <sys_atf_test_suite_test action="INSERT_OR_UPDATE">
+        <abort_on_failure>false</abort_on_failure>
+        <order>500</order>
+        <sys_class_name>sys_atf_test_suite_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-20 10:09:03</sys_created_on>
+        <sys_id>ca892f27c307f210ccf9f1d4e401312e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>9d99ef27c307f210ccf9f1d4e4013159</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_atf_test_suite_test_ca892f27c307f210ccf9f1d4e401312e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-20 10:09:03</sys_updated_on>
+        <test display_value="Installer#dictionaryOverrideRecordInsert()">9d99ef27c307f210ccf9f1d4e4013159</test>
+        <test_suite display_value="Installer">e1c78767c3cfb210ccf9f1d4e40131f3</test_suite>
+    </sys_atf_test_suite_test>
+</record_update>
