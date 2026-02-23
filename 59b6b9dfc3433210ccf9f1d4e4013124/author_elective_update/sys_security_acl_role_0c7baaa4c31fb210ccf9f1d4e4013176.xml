@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 08:11:11</sys_created_on>
+        <sys_id>0c7baaa4c31fb210ccf9f1d4e4013176</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_984628_deploye_0_deployer_log.x_984628_deploye_0.admin</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_security_acl display_value="x_984628_deploye_0_deployer_log">887baaa4c31fb210ccf9f1d4e4013171</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_0c7baaa4c31fb210ccf9f1d4e4013176</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 08:11:11</sys_updated_on>
+        <sys_user_role display_value="x_984628_deploye_0.admin" name="x_984628_deploye_0.admin">9db6b9dfc3433210ccf9f1d4e4013167</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</application>
+        <file_path/>
+        <instance_id>98330aca1bbeb1901024eb9b2d4bcb03</instance_id>
+        <instance_name>dev229819</instance_name>
+        <name>sys_security_acl_role_0c7baaa4c31fb210ccf9f1d4e4013176</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-02-23 08:11:11</sys_created_on><sys_id>0c7baaa4c31fb210ccf9f1d4e4013176</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_984628_deploye_0_deployer_log.x_984628_deploye_0.admin</sys_name><sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package><sys_policy/><sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope><sys_security_acl display_value="x_984628_deploye_0_deployer_log">887baaa4c31fb210ccf9f1d4e4013171</sys_security_acl><sys_update_name>sys_security_acl_role_0c7baaa4c31fb210ccf9f1d4e4013176</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-02-23 08:11:11</sys_updated_on><sys_user_role display_value="x_984628_deploye_0.admin" name="x_984628_deploye_0.admin">9db6b9dfc3433210ccf9f1d4e4013167</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>250313816</payload_hash>
+        <record_name>x_984628_deploye_0_deployer_log.x_984628_deploye_0.admin</record_name>
+        <reverted_from/>
+        <source>7a3732a3c34fb210ccf9f1d4e40131c9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 08:11:11</sys_created_on>
+        <sys_id>8c7baaa4c31fb210ccf9f1d4e401317b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c898d67020000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 08:11:11</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>4c7baaa4711fb2109d511ca1eeaff17a</update_guid>
+        <update_guid_history>4c7baaa4711fb2109d511ca1eeaff17a:250313816</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_984628_deploye_0_deployer_log.x_984628_deploye_0.admin">36cb2228c31fb210ccf9f1d4e4013125</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 08:12:44</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>1b3ed0e5c1b2405b9b8e7ec0ca502369</sys_id>
+        <sys_metadata>0c7baaa4c31fb210ccf9f1d4e4013176</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_984628_deploye_0_deployer_log.x_984628_deploye_0.admin</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_parent display_value="">887baaa4c31fb210ccf9f1d4e4013171</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_scope_delete display_value="">7fd3214818cc408ea49bed67a92cabe4</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_0c7baaa4c31fb210ccf9f1d4e4013176</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_0c7baaa4c31fb210ccf9f1d4e4013176">8c7baaa4c31fb210ccf9f1d4e401317b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 08:12:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
