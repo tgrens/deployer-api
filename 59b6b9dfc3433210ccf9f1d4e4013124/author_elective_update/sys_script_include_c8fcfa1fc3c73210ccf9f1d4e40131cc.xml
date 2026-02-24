@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_984628_deploye_0.GlideRecordUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GlideRecordUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * @class GlideRecordUtils
+ * @description The utils script contains functions of general regarding GlideRecord.
+ * @since 19/02/2026
+ * @date  19/02/2026
+ * @version 1.0.0
+ * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
+ *
+ */
+class GlideRecordUtils {
+
+	static isDerivedFromTable() {
+		
+	}
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-19 12:16:56</sys_created_on>
+        <sys_id>c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GlideRecordUtils</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-19 13:05:18</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</application>
+        <file_path/>
+        <instance_id>98330aca1bbeb1901024eb9b2d4bcb03</instance_id>
+        <instance_name>dev229819</instance_name>
+        <name>sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_984628_deploye_0.GlideRecordUtils&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;GlideRecordUtils&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[/**
+ * @class GlideRecordUtils
+ * @description The utils script contains functions of general regarding GlideRecord.
+ * @since 19/02/2026
+ * @date  19/02/2026
+ * @version 1.0.0
+ * @author Thomas Grensemann E-Mail: &lt;thomas.grensemann@t-systems.com&gt;
+ *
+ */
+class GlideRecordUtils {
+
+	static isDerivedFromTable() {
+		
+	}
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-02-19 12:16:56&lt;/sys_created_on&gt;&lt;sys_id&gt;c8fcfa1fc3c73210ccf9f1d4e40131cc&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;GlideRecordUtils&lt;/sys_name&gt;&lt;sys_package display_value="Deployer API" source="x_984628_deploye_0"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Deployer API"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-02-19 13:05:18&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1584679241</payload_hash>
+        <record_name>GlideRecordUtils</record_name>
+        <reverted_from/>
+        <source>d1b6b9dfc3433210ccf9f1d4e4013146</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-19 13:05:18</sys_created_on>
+        <sys_id>5168cf17c34f3210ccf9f1d4e401315f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c76013b9f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-19 13:05:18</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>1168cf17e74f3210c2a1924c1dd3b45e</update_guid>
+        <update_guid_history>1168cf17e74f3210c2a1924c1dd3b45e:1584679241,015dba5ff3cb32105295ea7c8cbab244:-1246551085</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 13:36:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>00466e3906b2408280012857676c21c1</sys_id>
+        <sys_metadata>c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GlideRecordUtils</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_scope_delete display_value="">7fd3214818cc408ea49bed67a92cabe4</sys_scope_delete>
+        <sys_update_name>sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc</sys_update_name>
+        <sys_update_version display_value="sys_script_include_c8fcfa1fc3c73210ccf9f1d4e40131cc">5168cf17c34f3210ccf9f1d4e401315f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 13:36:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

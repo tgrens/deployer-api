@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="DELETE">
+        <before>false</before>
+        <description/>
+        <name>RunAppInstall</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[
+new AppInstallAdjustScriptIncludes().adjustScripts();]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 11:26:41</sys_created_on>
+        <sys_id>fe679f28c313f210ccf9f1d4e401317d</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>RunAppInstall</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_fix_fe679f28c313f210ccf9f1d4e401317d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 12:19:31</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</application>
+        <file_path/>
+        <instance_id>98330aca1bbeb1901024eb9b2d4bcb03</instance_id>
+        <instance_name>dev229819</instance_name>
+        <name>sys_script_fix_fe679f28c313f210ccf9f1d4e401317d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;&lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;&lt;before&gt;false&lt;/before&gt;&lt;description/&gt;&lt;name&gt;RunAppInstall&lt;/name&gt;&lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;&lt;script&gt;&lt;![CDATA[
+new AppInstallAdjustScriptIncludes().adjustScripts();]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-02-23 11:26:41&lt;/sys_created_on&gt;&lt;sys_id&gt;fe679f28c313f210ccf9f1d4e401317d&lt;/sys_id&gt;&lt;sys_mod_count&gt;14&lt;/sys_mod_count&gt;&lt;sys_name&gt;RunAppInstall&lt;/sys_name&gt;&lt;sys_package display_value="Deployer API" source="x_984628_deploye_0"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Deployer API"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_fix_fe679f28c313f210ccf9f1d4e401317d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-02-23 12:19:31&lt;/sys_updated_on&gt;&lt;unloadable&gt;false&lt;/unloadable&gt;&lt;/sys_script_fix&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>573933121</payload_hash>
+        <record_name>RunAppInstall</record_name>
+        <reverted_from/>
+        <source>7a3732a3c34fb210ccf9f1d4e40131c9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 12:19:31</sys_created_on>
+        <sys_id>3d44a3e4c317f210ccf9f1d4e4013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c8a70c3470000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 12:19:31</sys_updated_on>
+        <type>Fix Script</type>
+        <update_guid>7944a3e4c617f210b895c50579081223</update_guid>
+        <update_guid_history>7944a3e4c617f210b895c50579081223:573933121,df336f243017f210cd7dc8a9afafd76b:-1046743045,98f2e3243d17f210677d4c23c41428b0:912737205,fd91af208717f2102c18cd12f662a02f:-946001627,dd816f204017f210c8141eb846a75fe8:-335076948,24cf536c0dd3f210e6c52830f85e1163:57494064,29bfdb2c24d3f2105c794994cee4e896:-838605955,246e93a810d3f2103419323ffcf95d69:-1943341578,422ed7683cd3f210df9032789c9b9c99:1855841277,cc0e1768a3d3f210b269925ad5f11e52:2024439777,38ed53682fd3f2108a89d05dc7f4d474:-1122700736,415b5be0a1d3f2101bbb79e1b2b25f2d:-1805916012,adda1f6077d3f21076a27ae5b9d655b6:872640813,417a1f6069d3f210902a1da53e942016:603602791,f728d3e83393f210be20747922aea07d:1261107289</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-23 12:21:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_fix">sys_script_fix</sys_db_object>
+        <sys_id>57bea34ed5754a54ba5d046191f87171</sys_id>
+        <sys_metadata>fe679f28c313f210ccf9f1d4e401317d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RunAppInstall</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_scope_delete display_value="">7fd3214818cc408ea49bed67a92cabe4</sys_scope_delete>
+        <sys_update_name>sys_script_fix_fe679f28c313f210ccf9f1d4e401317d</sys_update_name>
+        <sys_update_version display_value="sys_script_fix_fe679f28c313f210ccf9f1d4e401317d">3d44a3e4c317f210ccf9f1d4e4013124</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-23 12:21:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

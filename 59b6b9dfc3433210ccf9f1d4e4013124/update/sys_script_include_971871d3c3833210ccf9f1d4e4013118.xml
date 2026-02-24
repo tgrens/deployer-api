@@ -32,7 +32,7 @@ class ScriptEvaluator {
         let evaluatedValue = null;
         const evaluator = new GlideScopedEvaluator();
 
-        const gr = new GlideRecord('sys_script_include');
+        const gr = new GlideRecord('sys_script');
         gr.addQuery('sys_scope', scope);
         // // additional protection against accidental update
         gr.addQuery('sys_policy', 'read');
@@ -43,12 +43,8 @@ class ScriptEvaluator {
 
             gr.setValue('script', sourceScript);
 
-            try {
-                evaluatedValue = evaluator.evaluateScript(gr, 'script', params);
-                evaluatedValue = evaluator.getVariable('result');
-            } catch (e) {
-                throw new Error(e);
-            }
+            evaluatedValue = evaluator.evaluateScript(gr, 'script', params);
+            evaluatedValue = evaluator.getVariable('result');
         }
 
         return evaluatedValue;
@@ -58,13 +54,13 @@ class ScriptEvaluator {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 07:20:22</sys_created_on>
         <sys_id>971871d3c3833210ccf9f1d4e4013118</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>ScriptEvaluator</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_971871d3c3833210ccf9f1d4e4013118</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-20 06:28:47</sys_updated_on>
+        <sys_updated_on>2026-02-23 11:56:57</sys_updated_on>
     </sys_script_include>
 </record_update>
