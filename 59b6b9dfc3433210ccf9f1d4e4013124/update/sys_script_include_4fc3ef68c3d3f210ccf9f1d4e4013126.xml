@@ -28,8 +28,12 @@ class AppInstallAdjustScriptIncludes {
             'access': 'public'
         };
 
-        installer.recordUpdateByQuery('TableUtils Access change to public',
+
+		installer.recordUpdateByQuery('TableUtils Access change to public',
             'sys_script_include', query, properties, false);
+
+        // installer.recordUpdateValue('TableUtils Access change to public',
+        //     'sys_script_include', 'bb1996e80a0a0b0f00499e4a748ddfb7', 'access', 'public', false);
     }
 
 }]]></script>
@@ -37,13 +41,13 @@ class AppInstallAdjustScriptIncludes {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-23 12:18:32</sys_created_on>
         <sys_id>4fc3ef68c3d3f210ccf9f1d4e4013126</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>AppInstallAdjustScriptIncludes</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_4fc3ef68c3d3f210ccf9f1d4e4013126</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-23 13:24:08</sys_updated_on>
+        <sys_updated_on>2026-02-26 14:24:46</sys_updated_on>
     </sys_script_include>
 </record_update>

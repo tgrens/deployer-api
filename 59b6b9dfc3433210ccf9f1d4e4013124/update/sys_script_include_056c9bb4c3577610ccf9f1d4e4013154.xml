@@ -18,27 +18,22 @@
  * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
  *
  */
-class RecordDeleter {
+class RecordDeleter extends Record {
 
-	/**
-     * 
-     */
-    constructor() {
-        this.LOG_HANDLER = new LoggingHandler();
-    }
 
     /**
      * 
      */
-    recordDelete(source, reason, table, sysId, workflow) {
-        workflow = workflow || false;
+    recordDelete(source, reason, table, sysId, stealth) {
+        stealth = stealth || false;
         let result = '';
+		const query = QueryBuilder.findRecordBySysId(sysId);
 
-        if (UtilityFunctions.hasToExecute(table)) {
+        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
             const params = {
                 'table': table,
                 'sysId': sysId,
-                'workflow': UtilityFunctions.getBooleanValue(workflow),
+                'stealth': UtilityFunctions.getBooleanValue(stealth),
                 'result': ''
 
             };
@@ -47,10 +42,10 @@ class RecordDeleter {
 
             result = new ScriptEvaluator().executScript('global', script, params);
 
-            this.LOG_HANDLER.info(source, 'Record successfully deleted', reason, {
-                'targetRecord': result,
-                'targetTable': table
-            });
+			this.processResult(result, source, 'Record delete', reason, table, {
+				'sysId': sysId
+			});
+
         } else {
             this.LOG_HANDLER.error(source, 'Record delete failed', reason, table, {
                 'sysId': sysId
@@ -64,13 +59,13 @@ class RecordDeleter {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:24:44</sys_created_on>
         <sys_id>056c9bb4c3577610ccf9f1d4e4013154</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>RecordDeleter</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_056c9bb4c3577610ccf9f1d4e4013154</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-24 07:01:36</sys_updated_on>
+        <sys_updated_on>2026-02-26 09:12:25</sys_updated_on>
     </sys_script_include>
 </record_update>

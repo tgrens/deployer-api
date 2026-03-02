@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order>100</order>
+        <roles>admin</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-26 14:43:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2a022b2dc35ffa10ccf9f1d4e4013163</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Deployer API</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_app_application_2a022b2dc35ffa10ccf9f1d4e4013163</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-26 14:50:37</sys_updated_on>
+        <title>Deployer API</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

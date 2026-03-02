@@ -18,36 +18,25 @@
  * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
  *
  */
-class RecordUpdater {
-
-    /**
-     * 
-     */
-    constructor() {
-        this.LOG_HANDLER = new LoggingHandler();
-    }
+class RecordUpdater extends Record {
 
     /**
      * 
      */
     // eslint-disable-next-line
-    recordUpdate(source, reason, table, sysId, field, value, workflow) {
-        workflow = workflow || false;
+    recordUpdate(source, reason, table, sysId, properties, stealth) {
+        stealth = stealth || false;
         let result = '';
+        const query = QueryBuilder.findRecordBySysId(sysId);
 
-        if (UtilityFunctions.hasToExecute(table)) {
-            const properties = {
-                'field': field,
-                'value': value
-            };
+        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
 
             const params = {
-                'reason': reason,
                 'table': table,
                 'column': 'sys_id',
                 'identifier': sysId,
                 'properties': JSON.stringify(properties),
-                'workflow': UtilityFunctions.getBooleanValue(workflow),
+                'stealth': UtilityFunctions.getBooleanValue(stealth),
                 'result': ''
             };
 
@@ -55,10 +44,10 @@ class RecordUpdater {
 
             result = new ScriptEvaluator().executScript('global', script, params);
 
-            this._processResult(result, source, reason, table, properties);
+            this.processResult(result, source, 'Record update', reason, table, properties);
 
         } else {
-            this.LOG_HANDLER.error(source, 'Record update failed', reason, table, {
+            this.LOG_HANDLER.error(source, 'Record update failed', reason, table, properties, {
                 'sysId': sysId,
                 'field': field
             });
@@ -74,22 +63,22 @@ class RecordUpdater {
      * @param {String} table The table to be used.
      * @param {String} query Encoded query
      * @param {Object} properties property object
-     * @param {Boolean} workFlow Enables or disables the running of business rules
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
      *
      * @returns {String}  sys_id of the updated record. Returns null if the update fails.
      */
     // eslint-disable-next-line
-    recordUpdateByQuery(source, reason, table, query, properties, workflow) {
-        workflow = workflow || false;
+    recordUpdateByQuery(source, reason, table, query, properties, stealth) {
+        stealth = stealth || false;
         let result = '';
 
 
-        if (UtilityFunctions.hasToExecute(table)) {
+        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
             const params = {
                 'table': table,
                 'query': query,
                 'properties': JSON.stringify(properties),
-                'workflow': UtilityFunctions.getBooleanValue(workflow),
+                'stealth': UtilityFunctions.getBooleanValue(stealth),
                 'result': ''
             };
 
@@ -97,7 +86,7 @@ class RecordUpdater {
 
             result = new ScriptEvaluator().executScript('global', script, params);
 
-            this._processResult(result, source, reason, table, properties);
+            this.processResult(result, source, 'Record update', reason, table, properties);
 
         } else {
             this.LOG_HANDLER.error(source, 'Record update failed', reason, table, properties);
@@ -110,16 +99,15 @@ class RecordUpdater {
      * 
      */
     // eslint-disable-next-line
-    dictionaryOverrideRecordUpdate(source, reason, name, element, override, field, value, workflow) {
-        workflow = workflow || false;
-        const properties = {};
+    dictionaryOverrideRecordUpdate(source, reason, name, element, override, checked, field, value, stealth) {
+        stealth = stealth || false;
         let result = '';
         const query = QueryBuilder.findDictionaryOverride(UtilityFunctions.getBaseTable(name), name, element);
+        const properties = {};
+        properties[override] = checked;
+        properties[field] = value;
 
-        if (UtilityFunctions.hasToExecute(name)) {
-
-            properties[override] = true;
-            properties[field] = value;
+        if (UtilityFunctions.isValidRecord('sys_dictionary_override', query)) {
 
             gs.debug('[RecordUpdater][dictionaryOverrideRecordUpdate] properties ==>' +
                 JSON.stringify(properties));
@@ -128,7 +116,7 @@ class RecordUpdater {
                 'table': 'sys_dictionary_override',
                 'query': query,
                 'properties': JSON.stringify(properties),
-                'workflow': UtilityFunctions.getBooleanValue(workflow),
+                'stealth': UtilityFunctions.getBooleanValue(stealth),
                 'result': ''
             };
 
@@ -136,7 +124,7 @@ class RecordUpdater {
 
             result = new ScriptEvaluator().executScript('global', script, params);
 
-            this._processResult(result, source, reason, 'sys_dictionary_override', properties);
+            this.processResult(result, source, 'Record update', reason, 'sys_dictionary_override', properties);
 
         } else {
             this.LOG_HANDLER.error(source, 'Record update failed', reason,
@@ -150,37 +138,65 @@ class RecordUpdater {
      * 
      */
     // eslint-disable-next-line
-    dictionaryRecordUpdate(source, reason, element, field, value, workflow) {
-        workflow = workflow || false;
-
-        const query = '';
-
+    dictionaryRecordUpdate(source, reason, name, element, field, value, stealth) {
+        stealth = stealth || false;
+        let result = '';
         const properties = {
             'field': field,
             'value': value
         };
 
-        var params = {
-            'reason': reason,
-            'table': 'sys_dictionary',
-            'properties': properties,
-            'workflow': UtilityFunctions.getBooleanValue(workflow),
-            'result': ''
-        };
+        const tables = UtilityFunctions.getTables(name);
+        const query = QueryBuilder.findDictionaryEntry(element, tables);
+        gs.debug('[RecordUpdater][dictionaryRecordUpdate] query ==>' + query);
 
-        const script = ScriptBuider.getScriptRecordUpdateByQuery();
+        const record = UtilityFunctions.getGlideRecord('sys_dictionary', query);
 
-        return new ScriptEvaluator().executScript('global', script, params);
+        if (record.next()) {
+            gs.debug('[RecordUpdater][dictionaryRecordUpdate] record ==>' + record.getUniqueValue());
+
+            const script = ScriptBuider.getScriptRecordSetValue();
+
+            result = new ScriptEvaluator().runScript('global', script, 'sys_dictionary',
+                record.getUniqueValue(), field, value, UtilityFunctions.getBooleanValue(stealth));
+
+            this.processResult(result, source, 'Record update', reason, 'sys_dictionary', properties);
+
+        } else {
+            this.LOG_HANDLER.error(source, 'Record update failed', reason,
+                'sys_dictionary_override', properties);
+        }
+
+
+        return result;
     }
 
-    _processResult(result, source, reason, table, properties) {
-        if (result) {
-            this.LOG_HANDLER.info(source, 'Record successfully inserted', reason, {
-                'targetRecord': result,
-                'targetTable': table
-            });
+    /**
+     * 
+     */
+    // eslint-disable-next-line
+    recordUpdateValue(source, reason, table, sysId, field, value, stealth) {
+		let result = '';
+		const properties = {
+            'field': field,
+            'value': value
+        };
+        const query = QueryBuilder.findRecordBySysId(sysId);
+        const record = UtilityFunctions.getGlideRecord(table, query);
+
+        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
+            gs.debug('[RecordUpdater][dictionaryRecordUpdate] record ==>' + record.getUniqueValue());
+
+            const script = ScriptBuider.getScriptRecordSetValue();
+
+            result = new ScriptEvaluator().runScript('global', script, table,
+                sysId, field, value, UtilityFunctions.getBooleanValue(stealth));
+
+            this.processResult(result, source, 'Update value', reason, table, properties);
+
         } else {
-            this.LOG_HANDLER.error(source, 'Record update failed', reason, table, properties);
+            this.LOG_HANDLER.error(source, 'Update value', reason,
+                'sys_dictionary_override', properties);
         }
     }
 
@@ -189,13 +205,13 @@ class RecordUpdater {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:22:55</sys_created_on>
         <sys_id>9cfb5f74c3577610ccf9f1d4e40131d7</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>RecordUpdater</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_9cfb5f74c3577610ccf9f1d4e40131d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-24 10:16:53</sys_updated_on>
+        <sys_updated_on>2026-02-26 12:47:03</sys_updated_on>
     </sys_script_include>
 </record_update>

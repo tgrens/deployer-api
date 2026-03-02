@@ -18,27 +18,20 @@
  * @author Thomas Grensemann E-Mail: <thomas.grensemann@t-systems.com>
  *
  */
-class RecordInserter {
+class RecordInserter extends Record {
 
     /**
      * 
      */
-    constructor() {
-        this.LOG_HANDLER = new LoggingHandler();
-    }
-
-    /**
-     * 
-     */
-    recordInsert(source, reason, table, properties, workflow) {
-        workflow = workflow || false;
+    recordInsert(source, reason, table, properties, stealth) {
+        stealth = stealth || false;
         let result = '';
 
         if (UtilityFunctions.hasToExecute(table)) {
             const params = {
                 'table': table,
                 'properties': JSON.stringify(properties),
-                'workflow': UtilityFunctions.getBooleanValue(workflow),
+                'stealth': UtilityFunctions.getBooleanValue(stealth),
                 'result': ''
             };
 
@@ -46,7 +39,7 @@ class RecordInserter {
 
             result = new ScriptEvaluator().executScript('global', script, params);
 
-            this._processResult(result, source, reason, table, properties);
+            this.processResult(result, source, 'Record insert', reason, table, properties);
 
         } else {
             this.LOG_HANDLER.error(source, 'Record insert failed', reason, table, properties);
@@ -57,7 +50,7 @@ class RecordInserter {
 
     _processResult(result, source, reason, table, properties) {
         if (result) {
-            this.LOG_HANDLER.info(source, 'Record successfully inserted', reason, {
+            this.LOG_HANDLER.info(source, 'Record successfully inserted', reason, properties, {
                 'targetRecord': result,
                 'targetTable': table
             });
@@ -71,13 +64,13 @@ class RecordInserter {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:21:22</sys_created_on>
         <sys_id>d22b9334c3577610ccf9f1d4e40131f8</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>RecordInserter</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_d22b9334c3577610ccf9f1d4e40131f8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-24 09:09:33</sys_updated_on>
+        <sys_updated_on>2026-02-26 09:12:21</sys_updated_on>
     </sys_script_include>
 </record_update>

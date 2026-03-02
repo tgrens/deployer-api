@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="DELETE">
+        <operation>execute</operation>
+        <source_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-26 10:13:51</sys_created_on>
+        <sys_id>c2446a29c357fa10ccf9f1d4e40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ScriptIncludeRenderer</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_scope_privilege_c2446a29c357fa10ccf9f1d4e40131a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-26 10:13:51</sys_updated_on>
+        <target_name>ScriptIncludeRenderer</target_name>
+        <target_scope display_value="App Doc API">3da8e074ad47721065255918e0980e97</target_scope>
+        <target_type>sys_script_include</target_type>
+    </sys_scope_privilege>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</application>
+        <file_path/>
+        <instance_id>98330aca1bbeb1901024eb9b2d4bcb03</instance_id>
+        <instance_name>dev229819</instance_name>
+        <name>sys_scope_privilege_c2446a29c357fa10ccf9f1d4e40131a1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege"><sys_scope_privilege action="INSERT_OR_UPDATE"><operation>execute</operation><source_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</source_scope><status>allowed</status><sys_class_name>sys_scope_privilege</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-02-26 10:13:51</sys_created_on><sys_id>c2446a29c357fa10ccf9f1d4e40131a1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ScriptIncludeRenderer</sys_name><sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package><sys_policy/><sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope><sys_update_name>sys_scope_privilege_c2446a29c357fa10ccf9f1d4e40131a1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-02-26 10:13:51</sys_updated_on><target_name>ScriptIncludeRenderer</target_name><target_scope display_value="App Doc API">3da8e074ad47721065255918e0980e97</target_scope><target_type>sys_script_include</target_type></sys_scope_privilege></record_update>]]></payload>
+        <payload_hash>-1306819849</payload_hash>
+        <record_name>ScriptIncludeRenderer</record_name>
+        <reverted_from/>
+        <source>9e69c43be1f222108bb2327e625886a1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-26 10:13:51</sys_created_on>
+        <sys_id>42446a29c357fa10ccf9f1d4e40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c9970c8bf0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-26 10:13:51</sys_updated_on>
+        <type>Cross scope privilege</type>
+        <update_guid>02446a29aa57fa10dea34ca53a47aca3</update_guid>
+        <update_guid_history>02446a29aa57fa10dea34ca53a47aca3:-1306819849</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-02 08:54:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_scope_privilege">sys_scope_privilege</sys_db_object>
+        <sys_id>0ee34369d374417a9525f4a254ff1164</sys_id>
+        <sys_metadata>c2446a29c357fa10ccf9f1d4e40131a1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ScriptIncludeRenderer</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_scope_delete display_value="">7fd3214818cc408ea49bed67a92cabe4</sys_scope_delete>
+        <sys_update_name>sys_scope_privilege_c2446a29c357fa10ccf9f1d4e40131a1</sys_update_name>
+        <sys_update_version display_value="sys_scope_privilege_c2446a29c357fa10ccf9f1d4e40131a1">42446a29c357fa10ccf9f1d4e40131a4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-02 08:54:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

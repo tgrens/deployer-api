@@ -35,12 +35,13 @@ class ScriptBuider {
 
         builder.append("for (var property in obj) {");
         builder.append("var value = obj[property];");
-        builder.append("if (value && typeof value !== 'function') {");
+
         builder.append("record[property] = value;");
-        builder.append("}");
+
         builder.append("}");
 
-        builder.append("record.setWorkflow(workflow);");
+        builder.append("record.setWorkflow(stealth);");
+        builder.append("record.autoSysFields(stealth);");
         builder.append("result = record.insert();");
 
         return builder.toString();
@@ -61,13 +62,14 @@ class ScriptBuider {
         builder.append("if (record.get(column, identifier)) {");
         builder.append("for (var property in obj) {");
         builder.append("var value = obj[property];");
-        builder.append("if (value && typeof value !== 'function') {");
+
         builder.append("record[property] = value;");
-        builder.append("}");
+
         builder.append("}");
         builder.append("}");
 
-        builder.append("record.setWorkflow(workflow);");
+        builder.append("record.setWorkflow(stealth);");
+        builder.append("record.autoSysFields(stealth);");
         builder.append("result = record.update();");
 
         return builder.toString();
@@ -91,13 +93,14 @@ class ScriptBuider {
         builder.append("if (record.next()) {");
         builder.append("for (var property in obj) {");
         builder.append("var value = obj[property];");
-        builder.append("if (value && typeof value !== 'function') {");
+
         builder.append("record[property] = value;");
-        builder.append("}");
+
         builder.append("}");
         builder.append("}");
 
-        builder.append("record.setWorkflow(workflow);");
+        builder.append("record.setWorkflow(stealth);");
+        builder.append("record.autoSysFields(stealth);");
         builder.append("result = record.update();");
 
         return builder.toString();
@@ -115,11 +118,39 @@ class ScriptBuider {
         builder.append("var record = new GlideRecord(table);");
         builder.append("record.addQuery('sys_id', sysId);");
         builder.append("record.setLimit(1);");
-        builder.append("record.setWorkflow(workflow);");
         builder.append("record.query();");
         builder.append("if (record.next()) {");
+
+        builder.append("record.setWorkflow(stealth);");
+        builder.append("record.autoSysFields(stealth);");
         builder.append("result = record.deleteRecord();");
+
         builder.append("}");
+
+        return builder.toString();
+    }
+
+    /**
+     * @description Returns an script decoded to text.
+     *
+     * @returns {String} decoded script
+     */
+    static getScriptRecordSetValue() {
+        const builder = new StringBuilder();
+
+        builder.append("var result = '';");
+        builder.append("var grRecord = new GlideRecord(param1);");
+        builder.append("if (grRecord.isValidField(param3) == true){");
+        builder.append("if (param5 == true){");
+        builder.append("grRecord.autoSysFields(false);");
+        builder.append("grRecord.setWorkflow(false);");
+        builder.append("}");
+        builder.append("if (grRecord.get(param2)){");
+        builder.append("grRecord[param3] = param4;");
+        builder.append("result = grRecord.update();");
+        builder.append("}");
+        builder.append("}");
+
 
         return builder.toString();
     }
@@ -129,13 +160,13 @@ class ScriptBuider {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 11:06:53</sys_created_on>
         <sys_id>e1ac6a5bc34b3210ccf9f1d4e401316f</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>93</sys_mod_count>
         <sys_name>ScriptBuider</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_e1ac6a5bc34b3210ccf9f1d4e401316f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-24 08:34:38</sys_updated_on>
+        <sys_updated_on>2026-02-26 10:16:52</sys_updated_on>
     </sys_script_include>
 </record_update>
