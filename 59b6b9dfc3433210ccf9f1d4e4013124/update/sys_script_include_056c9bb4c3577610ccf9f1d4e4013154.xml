@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_984628_deploye_0.RecordDeleter</api_name>
         <caller_access/>
@@ -22,14 +22,27 @@ class RecordDeleter extends Record {
 
 
     /**
-     * 
+     * @description Deletes the record.
+     *
+     * @param {String} source source application
+	 * @param {String} reason reason of the operation
+     * @param {String} table The table to be used.
+     * @param {String} sysId record sys_id
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
+     *
+     * @returns {Boolean}  Flag that indicates whether the record was successfully deleted.
+	 * 
+	 * 			Valid values:
+
+				true: Record was deleted.
+				false: No record was found to delete.
      */
     recordDelete(source, reason, table, sysId, stealth) {
         stealth = stealth || false;
         let result = '';
 		const query = QueryBuilder.findRecordBySysId(sysId);
 
-        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
+        if (UtilityFunctions.isValidTable(table) && UtilityFunctions.isValidRecord(table, query)) {
             const params = {
                 'table': table,
                 'sysId': sysId,
@@ -59,13 +72,13 @@ class RecordDeleter extends Record {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:24:44</sys_created_on>
         <sys_id>056c9bb4c3577610ccf9f1d4e4013154</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>RecordDeleter</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_056c9bb4c3577610ccf9f1d4e4013154</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-26 09:12:25</sys_updated_on>
+        <sys_updated_on>2026-03-16 12:52:23</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_984628_deploye_0.AppInstallAdjustScriptIncludes</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>AppInstallAdjustScriptIncludes</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[class AppInstallAdjustScriptIncludes {
+
+
+    adjustScripts(installer) {
+        const query = 'name=Adder';
+		const properties = {
+			access: 'public'
+		};
+
+        installer.recordUpdateByQuery('Access change to public', 'sys_script_include',
+              query, properties, false);
+
+    }
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-02 13:08:09</sys_created_on>
+        <sys_id>ffc037b2c3137210ccf9f1d4e401317c</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>AppInstallAdjustScriptIncludes</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_update_name>sys_script_include_ffc037b2c3137210ccf9f1d4e401317c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-16 11:46:55</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</application>
+        <file_path/>
+        <instance_id>98330aca1bbeb1901024eb9b2d4bcb03</instance_id>
+        <instance_name>dev229819</instance_name>
+        <name>sys_script_include_ffc037b2c3137210ccf9f1d4e401317c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_984628_deploye_0.AppInstallAdjustScriptIncludes&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;AppInstallAdjustScriptIncludes&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[class AppInstallAdjustScriptIncludes {
+
+
+    adjustScripts(installer) {
+        const query = 'name=Adder';
+		const properties = {
+			access: 'public'
+		};
+
+        installer.recordUpdateByQuery('Access change to public', 'sys_script_include',
+              query, properties, false);
+
+    }
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-03-02 13:08:09&lt;/sys_created_on&gt;&lt;sys_id&gt;ffc037b2c3137210ccf9f1d4e401317c&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;AppInstallAdjustScriptIncludes&lt;/sys_name&gt;&lt;sys_package display_value="Deployer API" source="x_984628_deploye_0"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Deployer API"&gt;59b6b9dfc3433210ccf9f1d4e4013124&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_ffc037b2c3137210ccf9f1d4e401317c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-03-16 11:46:55&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1716359465</payload_hash>
+        <record_name>AppInstallAdjustScriptIncludes</record_name>
+        <reverted_from/>
+        <source>09369009c35f7610ccf9f1d4e401310a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-16 11:46:55</sys_created_on>
+        <sys_id>f0362fdfc3a73210ccf9f1d4e4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19cf67874510000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-16 11:46:55</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>30362fdf52a7321053ded3ca2f610b61</update_guid>
+        <update_guid_history>30362fdf52a7321053ded3ca2f610b61:1716359465,6ea4631fada73210079b7b1e5aa38941:-1561419250,335463dbf6a732106a02dd89ca8b2758:-1046220558,8134eb9bdba7321078207652fcb06df2:-672808804,2fd3e39b40a73210bf4f42ae6a0e598b:234326211,cde83736f75372106b3000fe5850afd4:-415864377,23283fb2485372104e9cf5423888647b:13461688,3de63332f853721069085ae4ed90221f:1940944926,42767fbe83137210f44cdbe46769ac26:-2106159242,d066fbbef51372104809f3b7df4440ee:245797052,a8653b3e5a13721086d68c43900df66a:-1887645165,cdc477fa5f13721059c6f13e0f67d4ba:-387663551,69647bbafd137210cd797efc9cb5ef7e:138085372,ae82f3b6f8137210988a61870666708a:392816679</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-16 12:39:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>5b98c509a3824fdaa3611c91f863c404</sys_id>
+        <sys_metadata>ffc037b2c3137210ccf9f1d4e401317c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AppInstallAdjustScriptIncludes</sys_name>
+        <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
+        <sys_scope_delete display_value="">7fd3214818cc408ea49bed67a92cabe4</sys_scope_delete>
+        <sys_update_name>sys_script_include_ffc037b2c3137210ccf9f1d4e401317c</sys_update_name>
+        <sys_update_version display_value="sys_script_include_ffc037b2c3137210ccf9f1d4e401317c">f0362fdfc3a73210ccf9f1d4e4013162</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-16 12:39:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

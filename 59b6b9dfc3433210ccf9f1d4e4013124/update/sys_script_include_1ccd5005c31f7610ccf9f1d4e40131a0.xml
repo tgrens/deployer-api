@@ -5,13 +5,13 @@
         <api_name>x_984628_deploye_0.Record</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description/>
+        <description>Base class for all record classes</description>
         <mobile_callable>false</mobile_callable>
         <name>Record</name>
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[/**
  * @class Record
- * @description 
+ * @description Base class for all record classes
  * @since 24/02/2026
  * @date  24/02/2026
  * @version 1.0.0
@@ -20,13 +20,25 @@
  */
 class Record {
 
+	/**
+	 * constructor
+	 */
 	constructor() {
 		this.LOG_HANDLER = new LoggingHandler();
 	}
 
-	/**
-	 * 
-	 */
+    /**
+     * @description Writes a log message
+     *
+     * @param {String} result result of the operation 
+	 * @param {String} source application
+	 * @param {String} message log message
+     * @param {String} reason reason of the operation
+	 * @param {String} table The table to be used
+     * @param {Object} properties property object
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
+     */
 	// eslint-disable-next-line
     processResult(result, source, message, reason, table, properties) {
 		
@@ -45,13 +57,13 @@ class Record {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 11:13:57</sys_created_on>
         <sys_id>1ccd5005c31f7610ccf9f1d4e40131a0</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Record</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_1ccd5005c31f7610ccf9f1d4e40131a0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-24 13:35:34</sys_updated_on>
+        <sys_updated_on>2026-03-16 12:45:52</sys_updated_on>
     </sys_script_include>
 </record_update>

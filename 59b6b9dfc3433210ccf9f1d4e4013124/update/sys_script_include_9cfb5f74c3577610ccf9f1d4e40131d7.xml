@@ -21,7 +21,16 @@
 class RecordUpdater extends Record {
 
     /**
-     * 
+     * @description Updates records from mention table based on given paramters
+     *
+     * @param {String} source application source 
+     * @param {String} reason reason of the operation
+     * @param {String} table The table to be used.
+     * @param {String} sysId record sys_id
+     * @param {Object} properties property object
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
      */
     // eslint-disable-next-line
     recordUpdate(source, reason, table, sysId, properties, stealth) {
@@ -29,7 +38,7 @@ class RecordUpdater extends Record {
         let result = '';
         const query = QueryBuilder.findRecordBySysId(sysId);
 
-        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
+        if (UtilityFunctions.isValidTable(table) && UtilityFunctions.isValidRecord(table, query)) {
 
             const params = {
                 'table': table,
@@ -48,8 +57,7 @@ class RecordUpdater extends Record {
 
         } else {
             this.LOG_HANDLER.error(source, 'Record update failed', reason, table, properties, {
-                'sysId': sysId,
-                'field': field
+                'sysId': sysId
             });
         }
 
@@ -59,7 +67,8 @@ class RecordUpdater extends Record {
     /**
      * @description Updates records from mention table based on mention query.
      *
-     * @param {String} reason 
+     * @param {String} source application source 
+     * @param {String} reason reason of the operation
      * @param {String} table The table to be used.
      * @param {String} query Encoded query
      * @param {Object} properties property object
@@ -72,8 +81,8 @@ class RecordUpdater extends Record {
         stealth = stealth || false;
         let result = '';
 
+        if (UtilityFunctions.isValidTable(table) && UtilityFunctions.isValidRecord(table, query)) {
 
-        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
             const params = {
                 'table': table,
                 'query': query,
@@ -96,7 +105,19 @@ class RecordUpdater extends Record {
     }
 
     /**
-     * 
+     * @description Updates records from sys_dictionary_override based on given paramters
+     *
+     * @param {String} source application source 
+     * @param {String} reason reason of the operation
+     * @param {String} name table
+     * @param {String} element column name
+     * @param {String} override the attribute to override
+     * @param {Boolean} checked true/false
+     * @param {String} field dependent filed
+     * @param {String} value field value
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
      */
     // eslint-disable-next-line
     dictionaryOverrideRecordUpdate(source, reason, name, element, override, checked, field, value, stealth) {
@@ -134,8 +155,19 @@ class RecordUpdater extends Record {
         return result;
     }
 
+
     /**
-     * 
+     * @description Updates records from sys_dictionary based on given paramters
+     *
+     * @param {String} source application source 
+     * @param {String} reason reason of the operation
+     * @param {String} name table
+     * @param {String} element column name
+     * @param {String} field dependent field
+     * @param {String} value the new field value
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
      */
     // eslint-disable-next-line
     dictionaryRecordUpdate(source, reason, name, element, field, value, stealth) {
@@ -164,7 +196,7 @@ class RecordUpdater extends Record {
 
         } else {
             this.LOG_HANDLER.error(source, 'Record update failed', reason,
-                'sys_dictionary_override', properties);
+                'sys_dictionary', properties);
         }
 
 
@@ -172,25 +204,36 @@ class RecordUpdater extends Record {
     }
 
     /**
-     * 
+     * @description Updates records from mention table based on given paramters
+     *
+     * @param {String} source application source 
+     * @param {String} reason reason of the operation
+     * @param {String} table The table to be used.
+     * @param {String} sysId record sys_id
+     * @param {String} field the field to update
+     * @param {String} value the new field value
+     * @param {Boolean} stealth modify data with setWorkflow() and autoSysFields()
+     *
+     * @returns {String}  sys_id of the updated record. Returns null if the update fails.
      */
     // eslint-disable-next-line
     recordUpdateValue(source, reason, table, sysId, field, value, stealth) {
-		let result = '';
-		const properties = {
+        let result = '';
+        const properties = {
             'field': field,
             'value': value
         };
         const query = QueryBuilder.findRecordBySysId(sysId);
         const record = UtilityFunctions.getGlideRecord(table, query);
 
-        if (UtilityFunctions.hasToExecute(table) && UtilityFunctions.isValidRecord(table, query)) {
+        if (UtilityFunctions.isValidTable(table) && UtilityFunctions.isValidRecord(table, query)) {
             gs.debug('[RecordUpdater][dictionaryRecordUpdate] record ==>' + record.getUniqueValue());
 
             const script = ScriptBuider.getScriptRecordSetValue();
 
             result = new ScriptEvaluator().runScript('global', script, table,
                 sysId, field, value, UtilityFunctions.getBooleanValue(stealth));
+
 
             this.processResult(result, source, 'Update value', reason, table, properties);
 
@@ -205,13 +248,13 @@ class RecordUpdater extends Record {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:22:55</sys_created_on>
         <sys_id>9cfb5f74c3577610ccf9f1d4e40131d7</sys_id>
-        <sys_mod_count>83</sys_mod_count>
+        <sys_mod_count>95</sys_mod_count>
         <sys_name>RecordUpdater</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_9cfb5f74c3577610ccf9f1d4e40131d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-26 12:47:03</sys_updated_on>
+        <sys_updated_on>2026-03-16 13:10:14</sys_updated_on>
     </sys_script_include>
 </record_update>
