@@ -5,13 +5,13 @@
         <api_name>x_984628_deploye_0.LoggingHandler</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description/>
+        <description>Offers features for logging actions during installation.</description>
         <mobile_callable>false</mobile_callable>
         <name>LoggingHandler</name>
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[/**
  * @class LoggingHandler
- * @description 
+ * @description Offers features for logging actions during installation.
  * @since 19/02/2026
  * @date  19/02/2026
  * @version 1.0.0
@@ -122,13 +122,13 @@ class LoggingHandler {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-23 07:51:06</sys_created_on>
         <sys_id>80d6a268c3dbb210ccf9f1d4e40131fa</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>LoggingHandler</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_80d6a268c3dbb210ccf9f1d4e40131fa</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-16 12:19:38</sys_updated_on>
+        <sys_updated_on>2026-03-17 08:35:51</sys_updated_on>
     </sys_script_include>
 </record_update>

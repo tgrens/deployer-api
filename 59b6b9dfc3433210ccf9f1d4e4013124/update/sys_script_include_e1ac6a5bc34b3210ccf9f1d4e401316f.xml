@@ -155,18 +155,57 @@ class ScriptBuider {
         return builder.toString();
     }
 
+
+    /**
+     * @description Returns an script decoded to text.
+     *
+     * @returns {String} decoded script
+     */
+    static getScriptAppInstall(apiName) {
+        const builder = new StringBuilder();
+
+        builder.append('/**').addLineBreake();
+        builder.append('* @class AppInstall').addLineBreake();
+        builder.append('* @description Installation script').addLineBreake();
+        builder.append('* @since').addLineBreake();
+        builder.append('* @date').addLineBreake();
+        builder.append('* @version').addLineBreake();
+        builder.append('* @author').addLineBreake();
+        builder.append('*').addLineBreake();
+        builder.append('*/').addLineBreake();
+        builder.append('function AppInstall() {').addLineBreake();
+        builder.addLineBreake();
+        builder.append('const installer = new x_984628_deploye_0.Installer(');
+        builder.append("'");
+        builder.append(apiName);
+        builder.append("'");
+        builder.append(');').addLineBreake();
+        builder.addLineBreake();
+
+
+        builder.append('installer.start();').addLineBreake();
+        builder.addLineBreake();
+        builder.append('// Add your code here').addLineBreake();
+        builder.addLineBreake();
+        builder.append('installer.finish();').addLineBreake();
+        builder.append('}');
+
+
+        return builder.toString();
+    }
+
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 11:06:53</sys_created_on>
         <sys_id>e1ac6a5bc34b3210ccf9f1d4e401316f</sys_id>
-        <sys_mod_count>93</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>ScriptBuider</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_e1ac6a5bc34b3210ccf9f1d4e401316f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-26 10:16:52</sys_updated_on>
+        <sys_updated_on>2026-03-18 09:53:03</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>public</access>
+        <access>package_private</access>
         <active>true</active>
-        <api_name>x_984628_deploye_0.AppInstallAdjustTableUtils</api_name>
+        <api_name>x_984628_deploye_0.AppInstallAdjustSysDBobject</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description>Script to change the TabelUtils access to public</description>
+        <description>Script to change the Application Access of sys_db_objects</description>
         <mobile_callable>false</mobile_callable>
-        <name>AppInstallAdjustTableUtils</name>
+        <name>AppInstallAdjustSysDBobject</name>
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[/**
- * @class AppInstallAdjustTableUtils
- * @description Script to change the TabelUtils access to public
+ * @class AppInstallAdjustSysDBobject
+ * @description Script to change the Application Access of sys_db_objects
  * @since 32/02/2026
  * @date  32/02/2026
  * @version 1.0.0
@@ -19,45 +19,48 @@
  *
  */
 
-class AppInstallAdjustTableUtils extends Record {
-
+class AppInstallAdjustSysDBobject extends Record {
     /**
      * Change the TabelUtils access to public
      */
-    adjustTableUtils() {
-        const query = 'active=true^name=TableUtils^sys_scope=global';
+    adjustSysDBobject() {
+        const query = 'name=sys_script_include';
 
         const params = {
-            'table': 'sys_script_include',
+            'table': 'sys_db_object',
             'query': query,
             'properties': JSON.stringify({
-                access: 'public'
+                create_access: true,
+				update_access: true
             }),
             'stealth': true,
             'result': ''
         };
 
         const script = ScriptBuider.getScriptRecordUpdateByQuery();
+
         const result = new ScriptEvaluator().executScript('global', script, params);
 
-        this.processResult(result, 
-			'x_984628_deploye_0', 
-			'Record update', 'Change the TabelUtils access to public', 'sys_script_include', 
-			params);
-    }
+		gs.debug('[AppInstallAdjustSysDBobject][adjustSysDBobject] result ==> ' + result);
 
+        this.processResult(result,
+            'x_984628_deploye_0',
+            'Record update', 'Change Script Include access', 
+			'sys_db_object',
+            params);
+    }
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-02-23 12:18:32</sys_created_on>
-        <sys_id>4fc3ef68c3d3f210ccf9f1d4e4013126</sys_id>
-        <sys_mod_count>33</sys_mod_count>
-        <sys_name>AppInstallAdjustTableUtils</sys_name>
+        <sys_created_on>2026-03-18 06:51:38</sys_created_on>
+        <sys_id>264374c4c3733210ccf9f1d4e4013156</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>AppInstallAdjustSysDBobject</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
-        <sys_update_name>sys_script_include_4fc3ef68c3d3f210ccf9f1d4e4013126</sys_update_name>
+        <sys_update_name>sys_script_include_264374c4c3733210ccf9f1d4e4013156</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-18 06:49:16</sys_updated_on>
+        <sys_updated_on>2026-03-18 07:11:05</sys_updated_on>
     </sys_script_include>
 </record_update>

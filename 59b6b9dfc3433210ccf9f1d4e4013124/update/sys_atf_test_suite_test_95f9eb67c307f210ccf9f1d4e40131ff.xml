@@ -14,7 +14,7 @@
         <sys_update_name>sys_atf_test_suite_test_95f9eb67c307f210ccf9f1d4e40131ff</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2026-02-20 10:11:00</sys_updated_on>
-        <test display_value="Installer#dictionaryOverrideRecordUpdate()">baf9af67c307f210ccf9f1d4e40131af</test>
+        <test display_value="Installer#recordUpdateValue()">baf9af67c307f210ccf9f1d4e40131af</test>
         <test_suite display_value="Installer">e1c78767c3cfb210ccf9f1d4e40131f3</test_suite>
     </sys_atf_test_suite_test>
 </record_update>

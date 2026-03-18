@@ -5,13 +5,13 @@
         <api_name>x_984628_deploye_0.RecordInserter</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description/>
+        <description>Provides a functionality to insert records during the installation.</description>
         <mobile_callable>false</mobile_callable>
         <name>RecordInserter</name>
         <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[/**
  * @class RecordInserter
- * @description 
+ * @description Provides a functionality to insert records during the installation.
  * @since 24/02/2026
  * @date  24/02/2026
  * @version 1.0.0
@@ -72,13 +72,13 @@ class RecordInserter extends Record {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-24 06:21:22</sys_created_on>
         <sys_id>d22b9334c3577610ccf9f1d4e40131f8</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>RecordInserter</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_d22b9334c3577610ccf9f1d4e40131f8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-16 12:53:00</sys_updated_on>
+        <sys_updated_on>2026-03-17 08:28:01</sys_updated_on>
     </sys_script_include>
 </record_update>

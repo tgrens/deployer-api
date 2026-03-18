@@ -41,6 +41,15 @@ class StringBuilder {
     }
 
     /**
+     * @description Inserts a single line breake
+     *
+     */
+    addLineBreake() {
+        this.resultString.push('\n');
+        return this;
+    }
+
+    /**
      * @description Replaces the char at the specified position in this sequence.
      *
      * @param {number} index Index of char
@@ -62,7 +71,7 @@ class StringBuilder {
      * @returns {object} current object this
      */
     deleteCharAt(index) {
-		const COUNT = 1;
+        const COUNT = 1;
 
         // eslint-disable-next-line 
         index = index - 1;
@@ -92,7 +101,7 @@ class StringBuilder {
     insert(offset, insert) {
         const FROM = 0;
 
-// eslint-disable-next-line 
+        // eslint-disable-next-line 
         if (offset > 0) {
             this.resultString.push(this.string.substring(FROM, offset) +
                 insert + this.string.substring(offset, this.length));
@@ -108,7 +117,7 @@ class StringBuilder {
     toString() {
         var result = this.resultString.join('');
 
-		// eslint-disable-next-line 
+        // eslint-disable-next-line 
         return new String(result);
     }
 }]]></script>
@@ -116,13 +125,13 @@ class StringBuilder {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-02-19 07:28:14</sys_created_on>
         <sys_id>e60b355bc3833210ccf9f1d4e40131f1</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>StringBuilder</sys_name>
         <sys_package display_value="Deployer API" source="x_984628_deploye_0">59b6b9dfc3433210ccf9f1d4e4013124</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Deployer API">59b6b9dfc3433210ccf9f1d4e4013124</sys_scope>
         <sys_update_name>sys_script_include_e60b355bc3833210ccf9f1d4e40131f1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-02-19 07:28:14</sys_updated_on>
+        <sys_updated_on>2026-03-18 07:28:39</sys_updated_on>
     </sys_script_include>
 </record_update>
